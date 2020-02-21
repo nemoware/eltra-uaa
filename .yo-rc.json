@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.nemoware.eltra.uaa",
+      "nativeLanguage": "ru"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "uaa",
+    "baseName": "EltraUAA",
+    "packageName": "com.nemoware.eltra.uaa",
+    "packageFolder": "com/nemoware/eltra/uaa",
+    "serverPort": "9999",
+    "authenticationType": "uaa",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MTA0MmE0NWQyNzdkZTk4NmNlZjFlOTdkNTJjOTJhYmRhYjBkZmVlZjc0Y2JmNDc3YWI1NmNiNDU3ZDY0ZWViMmVhOGE0MWNhM2ZiOWY0MzI1YzZmNTM2ZjgwNzU4ODA3NGM5NzRlNmJjMjY1YWRlY2U1NjY0ODBlOWMzMWM3YzQ=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1582249735053,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "ru",
+    "languages": ["ru", "en"],
+    "blueprints": [],
+    "skipClient": true
+  }
+}
