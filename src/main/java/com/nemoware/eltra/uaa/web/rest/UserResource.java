@@ -8,6 +8,7 @@ import com.nemoware.eltra.uaa.security.AuthoritiesConstants;
 import com.nemoware.eltra.uaa.service.MailService;
 import com.nemoware.eltra.uaa.service.UserService;
 import com.nemoware.eltra.uaa.service.dto.UserDTO;
+import com.nemoware.eltra.uaa.service.dto.UserLoginsDTO;
 import com.nemoware.eltra.uaa.web.rest.errors.BadRequestAlertException;
 import com.nemoware.eltra.uaa.web.rest.errors.EmailAlreadyUsedException;
 import com.nemoware.eltra.uaa.web.rest.errors.LoginAlreadyUsedException;
@@ -182,17 +183,17 @@ public class UserResource {
     }
 
     /**
-     * {@code DELETE /users/:login} : delete the "login" User.
+     * {@code DELETE /users} : delete the Users.
      *
-     * @param login the login of the user to delete.
+     * @param logins the logins of the users to delete.
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
-    @DeleteMapping("/users/{login:" + Constants.LOGIN_REGEX + "}")
+    @DeleteMapping("/users")
     @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
-    public ResponseEntity<Void> deleteUser(@PathVariable String login) {
-        log.debug("REST request to delete User: {}", login);
-        userService.deleteUser(login);
-        return ResponseEntity.noContent().headers(HeaderUtil.createAlert(applicationName,  "userManagement.deleted", login)).build();
+    public ResponseEntity<Void> deleteUsers(@RequestBody UserLoginsDTO logins) {
+        log.debug("REST request to delete Users: {}", logins);
+        userService.deleteUsers(logins.getLogins());
+        return ResponseEntity.noContent().headers(HeaderUtil.createAlert(applicationName,  "userManagement.deleted", logins.toString())).build();
     }
 
     /**
